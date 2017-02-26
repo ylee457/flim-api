@@ -17,4 +17,13 @@ class FlimSerializer < ActiveModel::Serializer
   has_many :matched_flims
   has_many :ratings
 
+
+
+  #customize the output
+  def year
+
+  	object.year.year
+  	
+  end
+
 end

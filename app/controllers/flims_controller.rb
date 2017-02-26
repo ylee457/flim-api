@@ -30,8 +30,15 @@ class FlimsController < ApplicationController
   # PATCH/PUT /flims/1
   def update
 
+
+    # 
+    puts "****Update is called....\n\n"
+    puts "params[:rating] is #{params[:rating]}\n"
+
     # retrieve the rating from params
-    rating = params[:flim][:rating].blank? ? 0 : params[:flim][:rating]
+    rating = !params.has_key?(:rating) ? 0 : params[:rating]
+
+    puts "Rating is #{rating}"
 
     # convert it to int
     rating_x = rating =~ /[1-5]/ ? rating.to_i : 0
@@ -39,6 +46,8 @@ class FlimsController < ApplicationController
     # add a rating for the flim f we have a rating
     if rating_x > 0
       rating_ = Rating.create(point: rating_x, flim_id: @flim.id)
+
+      puts "Rating #{rating_.inspect} is created for flim id #{@flim.id}\n"
     end
 
 
