@@ -1,0 +1,7 @@
+Prefix Verb   URI Pattern          Controller#Action
+ flims GET    /flims(.:format)     flims#index
+       POST   /flims(.:format)     flims#create
+  flim GET    /flims/:id(.:format) flims#show
+       PATCH  /flims/:id(.:format) flims#update
+       PUT    /flims/:id(.:format) flims#update
+       DELETE /flims/:id(.:format) flims#destroy

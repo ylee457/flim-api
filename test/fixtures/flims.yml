@@ -1,0 +1,53 @@
+# == Schema Information
+#
+# Table name: flims
+#
+#  id          :integer          not null, primary key
+#  title       :string
+#  description :string
+#  url_slug    :string
+#  year        :date
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+Laar:
+  title: La Artefacta
+  description: A documentary flim
+  url_slug: Laartefacta
+  year: 2015-12-22
+
+5BrokenCamera:
+  title: 5 Broken Camera
+  description:  5 BROKEN CAMERAS is a deeply personal, first-hand account of non-violent resistance in Bil'in, a West Bank village threatened by encroaching Israeli settlements.
+  url_slug: 5BrokenCamera
+  year: 2013-02-25
+
+
+OscarsFandor:
+  title: The Oscars on Fandor
+  description: A handy list of links to pretty much everything we've ever said about the various contenders for 2017 Oscars.
+  url_slug: OscarsFandor
+  year: 2017-04-25
+
+PhoneCall:
+  title: The Phone Call
+  description: Winner of the 2015 Academy Award for Live Action Short Film. When a shy lady who works at a helpline call center receives a phone call from a mystery man, she has no idea that...
+  url_slug: PhoneCall
+  year: 2015-08-25
+
+
+AttheDiner:
+  title: At the Diner
+  description: Where movie characters look at each other to uncover secrets about themselves.
+  url_slug: AttheDiner
+  year: 2013-09-25
+
+BlackHistoryMonth:
+  title: Black History Month
+  description: Saluting Black History Month with James Baldwin, Barry Jenkins, and the truly one of a kind Pam Grier.
+  url_slug: BlackHistoryMonth
+  year: 2012-07-25
+
