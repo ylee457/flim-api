@@ -19,8 +19,15 @@ Step 2: Run bundle exec rake db:create
 
 Step 3: Run bundle exec rake db:migrate
 
-Step 4: To run the minitest tests for model
+Step 4: To run the minitest tests for model, type:
+bin/rails db:environment:set RAILS_ENV=test
 bundle exec rake test:models
+
+To run tests for controller
+bundle exec rake test:controllers
+
+To run all tests
+bundle exec rake test
 
 Step 5: To load fixture data into development database
 bundle exec rake db:fixtures:load FIXTURES=flims

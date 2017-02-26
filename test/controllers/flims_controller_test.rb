@@ -2,7 +2,7 @@ require 'test_helper'
 
 class FlimsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @flim = flims(:one)
+    @flim = flims(:Laar)
   end
 
   test "should get index" do
