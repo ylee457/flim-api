@@ -20,17 +20,3 @@ Bonus points for the following:
     Support for only retrieving the attributes as listed in the request
     Document the end points (options that can be passed, etc)
     Provide all the documentation we'd need to run the application
-
-
-
-
-
-
-
-
-
-
-
-
-
-
