@@ -57,8 +57,14 @@ class FlimsControllerTest < ActionDispatch::IntegrationTest
     flim = Flim.order('url_slug ASC').first
 
     
+    # note: There is a bug in minitest for this test
+    # see issue here in Github
+    # https://github.com/rails/rails/issues/26033
+
+    
     #get flims_url, params: { sort: 'url_slug' }, as: :json
-#
+    #get flims_url, as: :json
+# 
     #assert_response :success
 #
     #jdata = JSON.parse response.body
@@ -69,6 +75,11 @@ class FlimsControllerTest < ActionDispatch::IntegrationTest
   test "it should get a sorted flim list in descending order" do
 
     flim = Flim.order('url_slug DESC').first
+
+    # note: There is a bug in minitest for this test
+    # see issue here in Github
+    # https://github.com/rails/rails/issues/26033
+
 
     #get :index, params: { sort: '-url_slug' }
     #get flims_url, params: { sort: '-url_slug' }, as: :json
