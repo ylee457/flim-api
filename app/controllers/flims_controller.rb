@@ -3,8 +3,22 @@ class FlimsController < ApplicationController
 
   # GET /flims
   def index
+
     @flims = Flim.all
 
+    if params['sort']
+
+      f = params['sort'].split(',').first
+      field = f[0] == '-' ? f[1..-1] : f
+      order = f[0] == '-' ? 'DESC' : 'ASC'
+      puts "field is #{field.inspect}\n"
+
+      if Flim.new.has_attribute?(field)
+        @flims = @flims.order("#{field} #{order}")
+      end
+    end
+
+    #@flims = @flims.page(params[:page] ? params[:page][:number] : 1)
     #render json: @flims
 
     # pagination support with 

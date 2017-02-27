@@ -8,7 +8,7 @@ class FlimsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
 
     get flims_url, as: :json
-    
+
     assert_response :success
 
     assert_equal response.content_type, 'application/vnd.api+json'
@@ -39,6 +39,11 @@ class FlimsControllerTest < ActionDispatch::IntegrationTest
     assert_response 200
   end
 
+  test "should update flim with a rating" do
+    patch flim_url(@flim), params: { flim: { description: @flim.description, title: @flim.title, url_slug: @flim.url_slug, year: @flim.year }, rating: 4 }, as: :json
+    assert_response 200
+  end
+
   test "should destroy flim" do
     assert_difference('Flim.count', -1) do
       delete flim_url(@flim), as: :json
@@ -46,4 +51,32 @@ class FlimsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response 204
   end
+
+  test "it should get a sorted flim list in ascending order" do
+
+    flim = Flim.order('url_slug ASC').first
+
+    
+    #get flims_url, params: { sort: 'url_slug' }, as: :json
+#
+    #assert_response :success
+#
+    #jdata = JSON.parse response.body
+#
+    #assert_equal flim.url_slug, jdata['data'][0]['attributes']['url_slug']
+  end
+
+  test "it should get a sorted flim list in descending order" do
+
+    flim = Flim.order('url_slug DESC').first
+
+    #get :index, params: { sort: '-url_slug' }
+    #get flims_url, params: { sort: '-url_slug' }, as: :json
+#
+    #assert_response :success
+    #jdata = JSON.parse response.body
+#
+    #assert_equal flim.url_slug, jdata['data'][0]['attributes']['url_slug']
+  end
+
 end
