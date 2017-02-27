@@ -54,16 +54,16 @@ step 7: Use cURL to test API.
 
 # to submit rating for flim
 
-curl  -i -H "Accept: application/vnd.api+json" -H "Content-Type: application/vnd.api+json" -X PUT -d '{ "flim": { "description": "This is a new test", "title": "I love traveling", "url_slug": "traveling"}, "rating": "5"}' "http://192.168.1.147:3000/flims/75439060"
+curl  -i -H "Accept: application/vnd.api+json" -H "Content-Type: application/vnd.api+json" -X PUT -d '{ "flim": { "description": "This is a new test", "title": "I love traveling", "url_slug": "traveling"}, "rating": "5"}' "http://localhost:3000/flims/75439060"
 
 # to retrive the updated result after the above step
-curl -i -H "Accept: application/vnd.api+json" http://192.168.1.147:3000/flims/75439060
+curl -i -H "Accept: application/vnd.api+json" http://localhost:3000/flims/75439060
 
 Step 8: See sorting with cURL
 
 # sorting... in ascending order
-curl -i -H "Accept: application/vnd.api+json" -H "Content-type: application/json" -X GET -d '{"sort": "url_slug"}' http://192.168.1.147:3000/flims
+curl -i -H "Accept: application/vnd.api+json" -H "Content-type: application/json" -X GET -d '{"sort": "url_slug"}' http://localhost:3000/flims
 
 # sorting... in desending order
-curl -i -H "Accept: application/vnd.api+json" -H "Content-type: application/json" -X GET -d '{"sort": "-url_slug"}' http://192.168.1.147:3000/flims
+curl -i -H "Accept: application/vnd.api+json" -H "Content-type: application/json" -X GET -d '{"sort": "-url_slug"}' http://localhost:3000/flims
 
