@@ -59,4 +59,11 @@ curl  -i -H "Accept: application/vnd.api+json" -H "Content-Type: application/vnd
 # to retrive the updated result after the above step
 curl -i -H "Accept: application/vnd.api+json" http://192.168.1.147:3000/flims/75439060
 
+Step 8: See sorting with cURL
+
+# sorting... in ascending order
+curl -i -H "Accept: application/vnd.api+json" -H "Content-type: application/json" -X GET -d '{"sort": "url_slug"}' http://192.168.1.147:3000/flims
+
+# sorting... in desending order
+curl -i -H "Accept: application/vnd.api+json" -H "Content-type: application/json" -X GET -d '{"sort": "-url_slug"}' http://192.168.1.147:3000/flims
 
