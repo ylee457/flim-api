@@ -6,8 +6,19 @@ class FlimsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
+
     get flims_url, as: :json
+    
     assert_response :success
+
+    assert_equal response.content_type, 'application/vnd.api+json'
+    jdata = JSON.parse response.body
+
+    # ensure getting the complete data set
+    assert_equal 6, jdata['data'].length
+
+    # ensure we are getting the right data
+    assert_equal jdata['data'][0]['type'], 'flims'
   end
 
   test "should create flim" do

@@ -34,8 +34,11 @@ class FlimsController < ApplicationController
     # 
     puts "****Update is called....\n\n"
     puts "params[:rating] is #{params[:rating]}\n"
+    puts "params[:flim][:description] is #{params[:flim][:description]}\n"
+    puts "params[:flim][:title] is #{params[:flim][:title]}\n"
 
     # retrieve the rating from params
+    #rating = !params.dig(:flim, :rating) ? 0 : params[:flim][:rating]
     rating = !params.has_key?(:rating) ? 0 : params[:rating]
 
     puts "Rating is #{rating}"
@@ -43,7 +46,7 @@ class FlimsController < ApplicationController
     # convert it to int
     rating_x = rating =~ /[1-5]/ ? rating.to_i : 0
 
-    # add a rating for the flim f we have a rating
+    # add a rating for the flim if we have a rating
     if rating_x > 0
       rating_ = Rating.create(point: rating_x, flim_id: @flim.id)
 
