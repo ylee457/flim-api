@@ -1,8 +1,6 @@
 
 # Introduction
-This project demonstrates the use of RESTFUL API with JSON in Rails. It is written in Rails 5 with Ruby 2.4.
-This project also uses RVM's .ruby-gemset and .ruby-version files to set up the environment so it will
-not conflict with other existing projects in the system.
+This project demonstrates the use of RESTFUL API with JSON in Rails. It also shows how to use pagination and sorting for the API. It is written in Rails 5 with Ruby 2.4. This project also uses RVM .ruby-gemset and .ruby-version files to set up the environment so it will not conflict with other existing projects in the system.
 
 Here is a simple step to install Ruby using RVM:
 _rvm install ruby-2.4.0_
@@ -63,7 +61,7 @@ curl  -i -H "Accept: application/vnd.api+json" -H "Content-Type: application/vnd
 ### to retrive the updated result after the above step
 curl -i -H "Accept: application/vnd.api+json" http://localhost:3000/flims/75439060
 
-#See results in sorting with cURL
+# See results in sorting with cURL
 
 ### sorting in ascending order
 curl -i -H "Accept: application/vnd.api+json" -H "Content-type: application/json" -X GET -d '{"sort": "url_slug"}' http://localhost:3000/flims
